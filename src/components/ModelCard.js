@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const ModelCard = (props)=> {
+const ModelCard = (props)=> {
     return (
         <div className="Model-Card">
             <h3> {props.producer} {props.model}</h3>
@@ -9,3 +9,18 @@ export const ModelCard = (props)=> {
         </div>
     );
 }
+
+export function DisplayModels(props) {
+    let models = props;
+    return (
+        <div className='model-cards'>
+        {models.map(item =>
+            <ModelCard model={item.model} producer={item.producer}
+                       tankVolume={item.tankVolume} horsePower={item.horsePower} />
+        ) }
+            
+        </div>
+    );
+}
+
+//export default DisplayModels;
