@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createContext } from 'react';
 
 const ModelCard = (props)=> {
     return (
@@ -10,17 +10,20 @@ const ModelCard = (props)=> {
     );
 }
 
-export function DisplayModels(props) {
-    let models = props;
+function DisplayModels(props) {
+    let {models} = props;
     return (
         <div className='model-cards'>
         {models.map(item =>
-            <ModelCard model={item.model} producer={item.producer}
-                       tankVolume={item.tankVolume} horsePower={item.horsePower} />
+            <ModelCard  key={item.model.toString()+item.producer.toString()} 
+                        model={item.model} 
+                        producer={item.producer}
+                        tankVolume={item.tankVolume} 
+                        horsePower={item.horsePower} />
         ) }
             
         </div>
     );
 }
 
-//export default DisplayModels;
+export default DisplayModels;

@@ -1,7 +1,7 @@
 import React from 'react'
 import './App.css';
 import {Header} from './components/head';
-import {DisplayModels} from "./components/ModelCard";
+import DisplayModels from "./components/ModelCard";
 
 let carModels = [
     {id: 100, model: 'sl600', producer: 'Mercedes', tankVolume: 70, horsePower: 220, image:"img/mercedes.jpg"},
